@@ -23,9 +23,6 @@ class TodoListViewController: UIViewController {
         tableView.reloadData()
     }
     
-    
-    func deleteTodo(at indexPath: IndexPath) {
-    }
 }
 
 //MARK: Segue
@@ -61,6 +58,7 @@ extension TodoListViewController: UITableViewDelegate {
         
         // 削除処理
         let deleteAction = UIContextualAction(style: .destructive, title: "Done") { [self] (action, view, completionHandler) in
+            try! realm.write { realm.delete(todos[indexPath.row]) }
             self.todos.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
             completionHandler(true)

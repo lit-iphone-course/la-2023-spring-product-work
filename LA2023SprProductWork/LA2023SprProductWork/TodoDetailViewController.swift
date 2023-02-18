@@ -1,10 +1,3 @@
-//
-//  TodoDetailViewController.swift
-//  LA2023SprProductWork
-//
-//  Created by Tomoya Tanaka on 2023/02/18.
-//
-
 import UIKit
 
 class TodoDetailViewController: UIViewController {
